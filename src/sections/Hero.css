@@ -1,0 +1,500 @@
+
+/* =========================================
+   GAJRIKA - HERO SECTION
+   FULL BACKGROUND IMAGE SLIDER
+   Ivory & Burgundy Theme
+========================================= */
+
+.gajrika-hero {
+  width: 100%;
+  min-height: 850px;
+  padding: 105px 7% 100px;
+
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  background: #F8F2E9;
+  color: #40212B;
+
+  overflow: hidden;
+}
+
+.gajrika-hero *,
+.gajrika-hero *::before,
+.gajrika-hero *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   FULL BACKGROUND SLIDER
+========================================= */
+
+.hero-background-slider {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  z-index: -2;
+}
+
+.hero-background-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  will-change: transform;
+}
+
+.hero-background-track.slide-transition {
+  transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.hero-background-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.hero-background-slide img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  animation: backgroundImageZoom 5s ease-in-out infinite alternate;
+}
+
+/* BACKGROUND ZOOM */
+
+@keyframes backgroundImageZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.04);
+  }
+}
+
+/* =========================================
+   IVORY OVERLAY
+========================================= */
+
+.hero-background-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(248, 242, 233, 0.82) 0%,
+    rgba(248, 242, 233, 0.68) 25%,
+    rgba(248, 242, 233, 0.25) 48%,
+    rgba(248, 242, 233, 0.10) 100%
+  );
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.gajrika-hero-content {
+  width: 100%;
+  max-width: 950px;
+
+  position: relative;
+  z-index: 2;
+
+  text-align: left;
+}
+
+/* EYEBROW */
+
+.gajrika-hero-label {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  color: #682F3C;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  margin-bottom: 38px;
+}
+
+.hero-label-line {
+  width: 38px;
+  height: 1px;
+
+  background: #C99A98;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.gajrika-hero-content h1 {
+  font-family: Georgia, "Times New Roman", serif !important;
+
+  font-size: clamp(58px, 7.2vw, 112px) !important;
+  font-weight: 400 !important;
+
+  line-height: 0.96 !important;
+  letter-spacing: -5px !important;
+
+  color: #40212B !important;
+
+  margin: 0 !important;
+}
+
+.gajrika-hero-content h1 > span:first-child {
+  color: #682F3C !important;
+  font-style: italic;
+}
+
+.gajrika-hero-content h1 .hero-period {
+  color: #C99A98 !important;
+}
+
+/* =========================================
+   BOTTOM CONTENT
+========================================= */
+
+.gajrika-hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+  margin-top: 45px;
+
+  max-width: 800px;
+}
+
+.gajrika-hero-bottom p {
+  max-width: 340px;
+
+  color: #795B5D;
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  margin: 0;
+}
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.gajrika-hero-button {
+  flex-shrink: 0;
+
+  min-height: 54px;
+  padding: 0 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  background: #682F3C;
+  color: #F8F2E9 !important;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.gajrika-hero-button:hover {
+  background: #40212B;
+  transform: translateY(-3px);
+}
+
+.hero-button-arrow {
+  font-size: 19px;
+}
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.gajrika-hero-scroll {
+  position: absolute;
+  left: 0;
+  bottom: -85px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #795B5D;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.gajrika-hero-scroll span {
+  width: 35px;
+  height: 1px;
+
+  background: #C99A98;
+}
+
+/* =========================================
+   SLIDE COUNTER
+========================================= */
+
+.hero-background-counter {
+  position: absolute;
+
+  right: 7%;
+  bottom: 35px;
+
+  z-index: 3;
+
+  color: #682F3C;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .gajrika-hero {
+    min-height: 800px;
+    padding: 90px 5%;
+  }
+
+  .gajrika-hero-content h1 {
+    font-size: clamp(55px, 7vw, 82px) !important;
+    letter-spacing: -3px !important;
+  }
+
+  .gajrika-hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-background-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(248, 242, 233, 0.97) 0%,
+      rgba(248, 242, 233, 0.88) 45%,
+      rgba(248, 242, 233, 0.4) 100%
+    );
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .gajrika-hero {
+    min-height: 780px;
+    padding: 75px 6% 100px;
+  }
+
+  .gajrika-hero-label {
+    font-size: 9px;
+    margin-bottom: 28px;
+  }
+
+  .gajrika-hero-content h1 {
+    font-size: clamp(53px, 11.5vw, 80px) !important;
+    letter-spacing: -3px !important;
+  }
+
+  .gajrika-hero-bottom {
+    margin-top: 30px;
+    gap: 22px;
+  }
+
+  .gajrika-hero-bottom p {
+    font-size: 13px;
+  }
+
+  .gajrika-hero-scroll {
+    display: none;
+  }
+
+  .hero-background-slide img {
+    object-position: 60% center;
+  }
+
+  .hero-background-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(248, 242, 233, 0.96) 0%,
+      rgba(248, 242, 233, 0.88) 55%,
+      rgba(248, 242, 233, 0.55) 100%
+    );
+  }
+
+  .hero-background-counter {
+    right: 6%;
+    bottom: 25px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .gajrika-hero {
+    min-height: 720px;
+    padding: 60px 6% 90px;
+  }
+
+  .gajrika-hero-content h1 {
+    font-size: 49px !important;
+    letter-spacing: -2px !important;
+  }
+
+  .gajrika-hero-bottom {
+    gap: 22px;
+  }
+
+  .gajrika-hero-button {
+    min-height: 50px;
+  }
+
+  .hero-background-slide img {
+    object-position: 62% center;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-background-track.slide-transition {
+    transition: none;
+  }
+
+  .hero-background-slide img {
+    animation: none;
+  }
+
+  .gajrika-hero-button {
+    transition: none;
+  }
+}
+
+/* =========================================
+   FORCE BACKGROUND SLIDER VISIBILITY
+========================================= */
+
+.gajrika-hero {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background: #F8F2E9;
+}
+
+/* BACKGROUND SLIDER */
+
+.gajrika-hero .hero-background-slider {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  z-index: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: hidden !important;
+}
+
+.gajrika-hero .hero-background-track {
+  display: flex !important;
+  position: relative !important;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0 !important;
+}
+
+.gajrika-hero .hero-background-slide {
+  display: block !important;
+  flex: 0 0 100% !important;
+
+  width: 100% !important;
+  min-width: 100% !important;
+  height: 100% !important;
+}
+
+.gajrika-hero .hero-background-slide img {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* OVERLAY */
+
+.gajrika-hero .hero-background-overlay {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+
+  z-index: 1 !important;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(248, 242, 233, 0.78) 0%,
+    rgba(248, 242, 233, 0.55) 45%,
+    rgba(248, 242, 233, 0.12) 100%
+  ) !important;
+}
+
+/* CONTENT ABOVE BACKGROUND */
+
+.gajrika-hero .gajrika-hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.gajrika-hero .hero-background-counter {
+  position: absolute !important;
+  z-index: 3 !important;
+}

@@ -1,0 +1,349 @@
+
+/* =========================================
+   GAJRIKA - MANUFACTURING SECTION
+   Ivory & Burgundy Theme
+========================================= */
+
+.gajrika-manufacturing {
+  width: 100%;
+  padding: 110px 7%;
+  background: #E8D1CB;
+  color: #40212B;
+  overflow: hidden;
+}
+
+.manufacturing-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.manufacturing-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 65px;
+}
+
+.manufacturing-eyebrow {
+  display: block;
+  color: #682F3C;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+}
+
+.manufacturing-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(55px, 7vw, 96px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -4px;
+  color: #40212B;
+  margin: 0;
+}
+
+.manufacturing-heading h2 span {
+  color: #682F3C;
+  font-style: italic;
+}
+
+.manufacturing-intro {
+  max-width: 370px;
+  padding-bottom: 8px;
+}
+
+.manufacturing-intro p {
+  color: #795B5D;
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* VISUAL */
+
+.manufacturing-visual {
+  width: 100%;
+  height: 480px;
+  position: relative;
+  overflow: hidden;
+  background: #682F3C;
+}
+
+.manufacturing-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.manufacturing-visual:hover img {
+  transform: scale(1.035);
+}
+
+.manufacturing-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(69, 2, 23),
+    rgba(64, 33, 43, 0.08)
+  );
+}
+
+.manufacturing-visual-overlay {
+  position: absolute;
+  z-index: 2;
+  left: 65px;
+  bottom: 65px;
+}
+
+.manufacturing-visual-overlay > span {
+  color: #E8D1CB;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.manufacturing-visual-overlay h3 {
+  color: #F8F2E9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 18px 0 0;
+}
+
+.manufacturing-visual-number {
+  position: absolute;
+  z-index: 2;
+  right: 35px;
+  bottom: 35px;
+  color: #F8F2E9;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* PROCESS */
+
+.manufacturing-process {
+  padding-top: 75px;
+}
+
+.manufacturing-process-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(104, 47, 60, 0.25);
+}
+
+.manufacturing-process-heading span,
+.manufacturing-process-heading p {
+  color: #682F3C;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.manufacturing-process-heading p {
+  margin: 0;
+}
+
+/* STEPS GRID */
+
+.manufacturing-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.manufacturing-step {
+  min-height: 245px;
+  padding: 30px 25px 25px 0;
+  margin-right: 25px;
+  border-right: 1px solid rgba(104, 47, 60, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.manufacturing-step:last-child {
+  border-right: none;
+  margin-right: 0;
+}
+
+.manufacturing-step-number {
+  color: #682F3C;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.manufacturing-step h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #40212B;
+  margin: 35px 0 15px;
+}
+
+.manufacturing-step p {
+  color: #795B5D;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.manufacturing-step-line {
+  width: 30px;
+  height: 1px;
+  background: #682F3C;
+  margin-top: auto;
+  transition: width 0.3s ease;
+}
+
+.manufacturing-step:hover .manufacturing-step-line {
+  width: 75px;
+}
+
+/* CTA */
+
+.manufacturing-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(104, 47, 60, 0.25);
+}
+
+.manufacturing-cta p {
+  color: #682F3C;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin: 0;
+}
+
+.manufacturing-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  color: #682F3C;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-bottom: 1px solid #682F3C;
+  padding-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.manufacturing-cta a:hover {
+  color: #C99A98;
+}
+
+.manufacturing-cta a span {
+  font-size: 18px;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .gajrika-manufacturing {
+    padding: 85px 5%;
+  }
+
+  .manufacturing-header {
+    gap: 30px;
+  }
+
+  .manufacturing-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .manufacturing-step:nth-child(2) {
+    border-right: none;
+  }
+
+  .manufacturing-step:nth-child(3),
+  .manufacturing-step:nth-child(4) {
+    border-top: 1px solid rgba(104, 47, 60, 0.2);
+  }
+
+  .manufacturing-step:nth-child(4) {
+    border-right: none;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .gajrika-manufacturing {
+    padding: 70px 6%;
+  }
+
+  .manufacturing-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  .manufacturing-heading h2 {
+    font-size: 59px;
+    letter-spacing: -2px;
+  }
+
+  .manufacturing-visual {
+    height: 370px;
+  }
+
+  .manufacturing-visual-overlay {
+    left: 25px;
+    bottom: 35px;
+  }
+
+  .manufacturing-visual-overlay h3 {
+    font-size: 45px;
+  }
+
+  .manufacturing-process {
+    padding-top: 50px;
+  }
+
+  .manufacturing-process-heading p {
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .manufacturing-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .manufacturing-step,
+  .manufacturing-step:nth-child(2),
+  .manufacturing-step:nth-child(4) {
+    min-height: 215px;
+    margin: 0;
+    padding: 25px 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(104, 47, 60, 0.2);
+  }
+
+  .manufacturing-step h3 {
+    margin-top: 22px;
+  }
+
+  .manufacturing-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,413 @@
+/* =========================================
+   GAJRIKA - FLOATING GLASS NAVBAR
+   Ivory / Rose / Burgundy Theme
+========================================= */
+
+/* MAIN NAVBAR */
+
+.gajrika-navbar {
+  width: 80%;
+  height: 78px;
+
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.476);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 2px solid rgba(100, 7, 7, 0.739);
+  border-radius: 150px;
+
+  box-shadow: 0 8px 30px rgba(64, 33, 43, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+/* NAVBAR CONTAINER */
+
+.gajrika-nav-container {
+  width: 100%;
+  max-width: 1600px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 4%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+
+.gajrika-logo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  color: #682F3C;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.gajrika-logo span {
+  color: #C99A98;
+}
+
+/* NAVIGATION LINKS */
+
+.gajrika-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.gajrika-nav-links a {
+  position: relative;
+
+  color: #40212B;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.gajrika-nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 1px;
+
+  background: #682F3C;
+  transition: width 0.3s ease;
+}
+
+.gajrika-nav-links a:hover {
+  color: #C99A98;
+}
+
+.gajrika-nav-links a:hover::after {
+  width: 100%;
+}
+
+/* CONTACT BUTTON */
+
+.gajrika-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  padding: 14px 22px;
+
+  background: #682F3C;
+  color: #F8F2E9;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: all 0.3s ease;
+}
+
+.gajrika-nav-cta span {
+  font-size: 17px;
+}
+
+.gajrika-nav-cta:hover {
+  background: #40212B;
+  transform: translateY(-2px);
+}
+
+/* MOBILE MENU BUTTON */
+
+.gajrika-menu-toggle {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gajrika-menu-toggle span {
+  display: block;
+
+  width: 24px;
+  height: 2px;
+  margin: 6px auto;
+
+  background: #682F3C;
+
+  transition: all 0.3s ease;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .gajrika-navbar {
+    width: 90%;
+  }
+
+  .gajrika-nav-container {
+    padding: 0 3%;
+  }
+
+  .gajrika-nav-links {
+    gap: 20px;
+  }
+
+  .gajrika-nav-links a {
+    font-size: 11px;
+  }
+
+  .gajrika-logo {
+    font-size: 28px;
+  }
+
+  .gajrika-nav-cta {
+    padding: 12px 16px;
+  }
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 768px) {
+
+  .gajrika-navbar {
+    width: 94%;
+    height: 70px;
+
+    top: 10px;
+    left: 3%;
+    transform: none;
+
+    background: rgba(248, 233, 238, 0.90);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    border: 1.5px solid rgba(100, 7, 7, 0.55);
+    border-radius: 50px;
+  }
+
+  .gajrika-nav-container {
+    padding: 0 5%;
+  }
+
+  .gajrika-logo {
+    font-size: 27px;
+  }
+
+  /* MOBILE DROPDOWN */
+
+  .gajrika-nav-links {
+    position: absolute;
+    top: 69px;
+    left: 0;
+
+    width: 100%;
+    padding: 25px 7% 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+    background: rgba(248, 233, 238, 0.97);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    border: 1px solid rgba(104, 47, 60, 0.20);
+    border-top: none;
+    border-radius: 0 0 25px 25px;
+
+    box-shadow: 0 15px 30px rgba(64, 33, 43, 0.10);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+
+    z-index: 1001;
+  }
+
+  .gajrika-nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* MOBILE LINKS */
+
+  .gajrika-nav-links a {
+    width: 100%;
+
+    padding: 16px 0;
+
+    font-size: 13px;
+    color: #40212B;
+
+    border-bottom: 1px solid rgba(104, 47, 60, 0.12);
+  }
+
+  .gajrika-nav-links a::after {
+    display: none;
+  }
+
+  .gajrika-nav-links a:hover {
+    color: #C99A98;
+  }
+
+  /* CTA */
+
+  .gajrika-nav-cta {
+    margin-left: auto;
+    margin-right: 15px;
+
+    padding: 11px 15px;
+    font-size: 10px;
+    gap: 10px;
+  }
+
+  .gajrika-nav-cta span {
+    font-size: 15px;
+  }
+
+  /* HAMBURGER */
+
+  .gajrika-menu-toggle {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .gajrika-menu-toggle.active span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .gajrika-menu-toggle.active span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .gajrika-navbar {
+    width: 94%;
+    height: 65px;
+    top: 10px;
+  }
+
+  .gajrika-logo {
+    font-size: 24px;
+  }
+
+  .gajrika-nav-cta {
+    padding: 10px 12px;
+    font-size: 9px;
+    gap: 7px;
+    margin-right: 8px;
+  }
+
+  .gajrika-menu-toggle {
+    width: 35px;
+    height: 38px;
+    padding: 5px;
+  }
+
+  .gajrika-menu-toggle span {
+    width: 22px;
+  }
+
+  .gajrika-nav-links {
+    top: 64px;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .gajrika-nav-cta {
+    display: none;
+  }
+
+  .gajrika-logo {
+    font-size: 25px;
+  }
+
+  .gajrika-nav-container {
+    padding: 0 6%;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+/* MOBILE - 2 CARDS SIDE BY SIDE */
+
+@media (max-width: 768px) {
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .category-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .category-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .category-card h3 {
+    font-size: 19px;
+  }
+
+  .category-card p {
+    font-size: 11px;
+  }
+}
