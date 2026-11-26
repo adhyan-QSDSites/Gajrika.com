@@ -6,37 +6,37 @@ const categories = [
     number: "01",
     name: "Face Care",
     description: "Skincare essentials for every routine.",
-    image: "public/images/face-care.jpg",
+    image: "/images/face-care.jpg",
   },
   {
     number: "02",
     name: "Hair Care",
     description: "Innovative solutions for hair and scalp care.",
-    image: "public/images/hair-care.jpg",
+    image: "/images/hair-care.jpg",
   },
   {
     number: "03",
     name: "Bath & Body",
     description: "Everyday care with a touch of indulgence.",
-    image: "public/images/bath-body.jpg",
+    image: "/images/bath-body.jpg",
   },
   {
     number: "04",
     name: "Personal Care",
     description: "Thoughtfully developed personal care products.",
-    image: "public/images/personal-care.jpg",
+    image: "/images/personal-care.jpg",
   },
   {
     number: "05",
     name: "Men's Grooming",
     description: "Modern grooming essentials for men.",
-    image: "public/images/mens-grooming.jpg",
+    image: "/images/mens-grooming.jpg",
   },
   {
     number: "06",
     name: "Baby Care",
     description: "Gentle care products for little ones.",
-    image: "public/images/baby-care.jpg",
+    image: "/images/baby-care.jpg",
   },
 ];
 

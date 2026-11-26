@@ -63,7 +63,7 @@ function Manufacturing() {
         <div className="manufacturing-visual">
 
           <img
-            src="public/images/manufacturing.jpg"
+            src="/images/manufacturing.jpg"
             alt="Cosmetic manufacturing process"
           />
 

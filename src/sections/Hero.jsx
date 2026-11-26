@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import "./Hero.css";
 
 const images = [
-  "/public/images/hero/hero-1.png",
-  "/public/images/hero/hero-2.png",
-  "/public/images/hero/hero-3.png",
-  "/public/images/hero/hero-4.png",
-  "/public/images/hero/hero-5.png"
+  "//images/hero/hero-1.png",
+  "//images/hero/hero-2.png",
+  "//images/hero/hero-3.png",
+  "//images/hero/hero-4.png",
+  "//images/hero/hero-5.png"
 ];
 
 function Hero() {
