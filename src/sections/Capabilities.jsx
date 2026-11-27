@@ -50,11 +50,18 @@ function Capabilities() {
   return (
     <section className="gajrika-capabilities" id="capabilities">
 
+      <div className="capabilities-motion" aria-hidden="true">
+        <div className="motion-orb motion-orb-one" />
+        <div className="motion-orb motion-orb-two" />
+        <div className="motion-orb motion-orb-three" />
+        <div className="motion-ribbon motion-ribbon-one" />
+        <div className="motion-ribbon motion-ribbon-two" />
+        <div className="motion-grain" />
+      </div>
+
       <div className="capabilities-container">
 
-        {/* SECTION HEADER */}
         <div className="capabilities-header">
-
           <div className="capabilities-heading">
             <span className="capabilities-eyebrow">
               WHAT WE BRING TO THE TABLE
@@ -78,15 +85,11 @@ function Capabilities() {
               DISCUSS YOUR PROJECT <span>↗</span>
             </a>
           </div>
-
         </div>
 
-        {/* CAPABILITY CARDS */}
         <div className="capabilities-grid">
-
           {capabilities.map((item) => (
             <article className="capability-card" key={item.number}>
-
               <div className="capability-card-top">
                 <span className="capability-number">
                   / {item.number}
@@ -96,30 +99,22 @@ function Capabilities() {
               </div>
 
               <div className="capability-card-content">
-                <span className="capability-tag">
-                  {item.tag}
-                </span>
-
+                <span className="capability-tag">{item.tag}</span>
                 <h3>{item.title}</h3>
-
                 <p>{item.description}</p>
               </div>
 
-              <div className="capability-card-line"></div>
-
+              <div className="capability-card-line" />
             </article>
           ))}
-
         </div>
 
-        {/* BOTTOM NOTE */}
         <div className="capabilities-bottom">
           <span>01 — 06</span>
           <p>ONE PARTNER. MULTIPLE POSSIBILITIES.</p>
         </div>
 
       </div>
-
     </section>
   );
 }

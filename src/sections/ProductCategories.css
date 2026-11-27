@@ -237,6 +237,11 @@
 
 /* MOBILE */
 
+
+/* =========================================
+   MOBILE - TWO CARDS SIDE BY SIDE
+========================================= */
+
 @media (max-width: 650px) {
   .gajrika-categories {
     padding: 70px 6%;
@@ -259,32 +264,69 @@
   }
 
   .categories-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 12px;
   }
 
   .category-image {
-    height: 380px;
+    height: auto;
+    aspect-ratio: 0.82 / 1;
+  }
+
+  .category-image-number {
+    top: 9px;
+    left: 9px;
+    font-size: 8px;
+  }
+
+  .category-explore {
+    width: 32px;
+    height: 32px;
+    right: 8px;
+    bottom: 8px;
+    font-size: 16px;
+  }
+
+  .category-card-content {
+    gap: 5px;
+    padding: 13px 0;
   }
 
   .category-card-content h3 {
-    font-size: 25px;
+    font-size: 19px;
+    margin-bottom: 6px;
+  }
+
+  .category-card-content p {
+    font-size: 10px;
+  }
+
+  .category-card-arrow {
+    font-size: 17px;
   }
 
   .categories-bottom p {
     font-size: 8px;
-    letter-spacing: 0.7px;
   }
 }
 
 /* SMALL MOBILE */
 
 @media (max-width: 380px) {
-  .category-image {
-    height: 300px;
+  .categories-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 10px;
   }
 
-  .categories-title h2 {
-    font-size: 49px;
+  .category-image {
+    aspect-ratio: 0.78 / 1;
+  }
+
+  .category-card-content h3 {
+    font-size: 17px;
+  }
+
+  .category-card-content p {
+    font-size: 9px;
   }
 }

@@ -1,48 +1,232 @@
 
 /* =========================================
-   GAJRIKA - CAPABILITIES SECTION
-   Ivory & Burgundy Theme
+   GAJRIKA — CAPABILITIES
+   DARK LIQUID AURORA
 ========================================= */
 
 .gajrika-capabilities {
   width: 100%;
-  padding: 110px 7%;
-  background: #682F3C;
-  color: #F8F2E9;
+  min-height: 850px;
+  padding: 115px 7%;
+
+  position: relative;
+  isolation: isolate;
   overflow: hidden;
+
+  background:
+    radial-gradient(ellipse at 50% 110%, #682F3C 0%, transparent 55%),
+    linear-gradient(135deg, #211018, #40212B 48%, #1D1019);
+
+  color: #F8F2E9;
 }
+
+/* =========================================
+   ANIMATED BACKGROUND
+========================================= */
+
+.capabilities-motion {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Floating light orbs */
+
+.motion-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(85px);
+  will-change: transform;
+}
+
+.motion-orb-one {
+  width: 520px;
+  height: 520px;
+  top: -220px;
+  left: -130px;
+
+  background: rgba(201, 154, 152, 0.25);
+
+  animation: orbOne 18s ease-in-out infinite alternate;
+}
+
+.motion-orb-two {
+  width: 620px;
+  height: 620px;
+  right: -220px;
+  top: 15%;
+
+  background: rgba(104, 47, 60, 0.75);
+
+  animation: orbTwo 22s ease-in-out infinite alternate;
+}
+
+.motion-orb-three {
+  width: 400px;
+  height: 400px;
+  bottom: -180px;
+  left: 35%;
+
+  background: rgba(162, 81, 103, 0.3);
+
+  animation: orbThree 20s ease-in-out infinite alternate;
+}
+
+/* Flowing liquid ribbons */
+
+.motion-ribbon {
+  position: absolute;
+  width: 120%;
+  height: 350px;
+  left: -10%;
+
+  border-radius: 50%;
+  border: 1px solid rgba(232, 209, 203, 0.12);
+
+  filter: blur(2px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.motion-ribbon-one {
+  top: 18%;
+
+  box-shadow:
+    0 0 35px rgba(201, 154, 152, 0.12),
+    inset 0 0 45px rgba(201, 154, 152, 0.08);
+
+  transform: rotate(-12deg);
+
+  animation: ribbonOne 16s ease-in-out infinite alternate;
+}
+
+.motion-ribbon-two {
+  top: 42%;
+  height: 420px;
+
+  border-color: rgba(201, 154, 152, 0.10);
+
+  box-shadow:
+    0 0 55px rgba(104, 47, 60, 0.3),
+    inset 0 0 55px rgba(104, 47, 60, 0.2);
+
+  transform: rotate(14deg);
+
+  animation: ribbonTwo 20s ease-in-out infinite alternate;
+}
+
+/* Fine texture */
+
+.motion-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.11;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+}
+
+/* =========================================
+   MOTION KEYFRAMES
+========================================= */
+
+@keyframes orbOne {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(180px, 130px, 0) scale(1.2);
+  }
+  100% {
+    transform: translate3d(80px, 280px, 0) scale(0.9);
+  }
+}
+
+@keyframes orbTwo {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-180px, 120px, 0) scale(1.15);
+  }
+  100% {
+    transform: translate3d(-100px, -140px, 0) scale(0.9);
+  }
+}
+
+@keyframes orbThree {
+  0% {
+    transform: translate3d(-100px, 0, 0);
+  }
+  100% {
+    transform: translate3d(180px, -130px, 0) scale(1.3);
+  }
+}
+
+@keyframes ribbonOne {
+  0% {
+    transform: translate3d(-4%, -15px, 0) rotate(-12deg) scaleY(0.85);
+  }
+  100% {
+    transform: translate3d(5%, 100px, 0) rotate(8deg) scaleY(1.2);
+  }
+}
+
+@keyframes ribbonTwo {
+  0% {
+    transform: translate3d(4%, 50px, 0) rotate(14deg) scaleY(1.1);
+  }
+  100% {
+    transform: translate3d(-5%, -90px, 0) rotate(-8deg) scaleY(0.85);
+  }
+}
+
+/* =========================================
+   CONTENT
+========================================= */
 
 .capabilities-container {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
+
+  position: relative;
+  z-index: 2;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER
+========================================= */
 
 .capabilities-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
   gap: 50px;
   margin-bottom: 75px;
 }
 
 .capabilities-eyebrow {
   display: block;
+
   color: #E8D1CB;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2.5px;
+
   margin-bottom: 28px;
 }
 
 .capabilities-heading h2 {
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: clamp(55px, 7vw, 100px);
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: -4px;
+
   margin: 0;
   color: #F8F2E9;
 }
@@ -52,7 +236,9 @@
   font-style: italic;
 }
 
-/* INTRO */
+/* =========================================
+   INTRO
+========================================= */
 
 .capabilities-intro {
   max-width: 370px;
@@ -60,9 +246,10 @@
 }
 
 .capabilities-intro p {
-  color: rgba(248, 242, 233, 0.75);
+  color: rgba(248, 242, 233, 0.78);
   font-size: 14px;
   line-height: 1.9;
+
   margin: 0 0 28px;
 }
 
@@ -70,56 +257,106 @@
   display: inline-flex;
   align-items: center;
   gap: 18px;
+
   color: #E8D1CB;
+
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 1.2px;
+
   text-decoration: none;
   border-bottom: 1px solid #C99A98;
   padding-bottom: 10px;
+
   transition: color 0.3s ease;
 }
 
 .capabilities-intro a:hover {
-  color: #F8F2E9;
+  color: #FFFFFF;
 }
 
 .capabilities-intro a span {
   font-size: 17px;
 }
 
-/* GRID */
+/* =========================================
+   GRID
+========================================= */
 
 .capabilities-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid rgba(248, 242, 233, 0.25);
-  border-left: 1px solid rgba(248, 242, 233, 0.25);
+
+  border-top: 1px solid rgba(248, 242, 233, 0.22);
+  border-left: 1px solid rgba(248, 242, 233, 0.22);
 }
 
-/* CARDS */
+/* =========================================
+   CARDS
+========================================= */
 
 .capability-card {
+  min-width: 0;
   min-height: 300px;
   padding: 30px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-right: 1px solid rgba(248, 242, 233, 0.25);
-  border-bottom: 1px solid rgba(248, 242, 233, 0.25);
+
+  border-right: 1px solid rgba(248, 242, 233, 0.22);
+  border-bottom: 1px solid rgba(248, 242, 233, 0.22);
+
   position: relative;
   overflow: hidden;
-  transition: background 0.35s ease;
+
+  background: rgba(35, 14, 24, 0.24);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  transition:
+    background 0.45s ease,
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.capability-card::before {
+  content: "";
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+  top: -100px;
+  right: -100px;
+
+  border-radius: 50%;
+  background: rgba(201, 154, 152, 0.16);
+  filter: blur(55px);
+
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .capability-card:hover {
-  background: #40212B;
+  background: rgba(104, 47, 60, 0.38);
+  transform: translateY(-5px);
+
+  box-shadow: 0 18px 45px rgba(10, 3, 8, 0.18);
 }
+
+.capability-card:hover::before {
+  opacity: 1;
+}
+
+/* CARD TOP */
 
 .capability-card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  position: relative;
+  z-index: 1;
 }
 
 .capability-number {
@@ -131,6 +368,7 @@
 .capability-arrow {
   color: #C99A98;
   font-size: 22px;
+
   transition: transform 0.3s ease;
 }
 
@@ -142,10 +380,13 @@
 
 .capability-card-content {
   margin-top: 45px;
+  position: relative;
+  z-index: 1;
 }
 
 .capability-tag {
   color: #C99A98;
+
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 1.5px;
@@ -153,18 +394,22 @@
 
 .capability-card h3 {
   font-family: Georgia, "Times New Roman", serif;
+
   color: #F8F2E9;
   font-size: clamp(23px, 2.2vw, 31px);
   font-weight: 400;
   line-height: 1.2;
+
   margin: 17px 0 12px;
 }
 
 .capability-card p {
   max-width: 340px;
-  color: rgba(248, 242, 233, 0.68);
+
+  color: rgba(248, 242, 233, 0.72);
   font-size: 12px;
   line-height: 1.8;
+
   margin: 0;
 }
 
@@ -173,27 +418,33 @@
 .capability-card-line {
   width: 35px;
   height: 1px;
+
   background: #C99A98;
   margin-top: 30px;
-  transition: width 0.4s ease;
+
+  transition: width 0.45s ease;
 }
 
 .capability-card:hover .capability-card-line {
   width: 100%;
 }
 
-/* FOOTER */
+/* =========================================
+   BOTTOM NOTE
+========================================= */
 
 .capabilities-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding-top: 25px;
 }
 
 .capabilities-bottom span,
 .capabilities-bottom p {
   color: rgba(248, 242, 233, 0.65);
+
   font-size: 10px;
   letter-spacing: 1.5px;
 }
@@ -202,7 +453,9 @@
   margin: 0;
 }
 
-/* TABLET */
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 1000px) {
   .gajrika-capabilities {
@@ -222,16 +475,19 @@
   }
 }
 
-/* MOBILE */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 650px) {
   .gajrika-capabilities {
-    padding: 70px 6%;
+    padding: 70px 5%;
   }
 
   .capabilities-header {
     flex-direction: column;
     align-items: flex-start;
+
     gap: 30px;
     margin-bottom: 45px;
   }
@@ -246,20 +502,101 @@
   }
 
   .capabilities-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .capability-card {
-    min-height: 250px;
-    padding: 25px;
+    min-height: 260px;
+    padding: 16px 12px;
+  }
+
+  .capability-number {
+    font-size: 10px;
+  }
+
+  .capability-arrow {
+    font-size: 17px;
   }
 
   .capability-card-content {
-    margin-top: 35px;
+    margin-top: 28px;
   }
 
-  .capabilities-bottom p {
+  .capability-tag {
     font-size: 8px;
     letter-spacing: 1px;
+  }
+
+  .capability-card h3 {
+    font-size: 19px;
+    margin: 12px 0 10px;
+  }
+
+  .capability-card p {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  .capability-card-line {
+    width: 25px;
+    margin-top: 22px;
+  }
+
+  .capabilities-bottom {
+    gap: 10px;
+  }
+
+  .capabilities-bottom span,
+  .capabilities-bottom p {
+    font-size: 8px;
+    letter-spacing: 0.6px;
+  }
+
+  .motion-orb {
+    filter: blur(65px);
+  }
+
+  .motion-ribbon {
+    opacity: 0.35;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .capability-card {
+    padding: 14px 9px;
+    min-height: 250px;
+  }
+
+  .capability-card h3 {
+    font-size: 17px;
+  }
+
+  .capability-card p {
+    font-size: 9px;
+  }
+
+  .capability-tag {
+    font-size: 7px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-orb,
+  .motion-ribbon {
+    animation: none !important;
+  }
+
+  .capability-card,
+  .capability-arrow,
+  .capability-card-line {
+    transition: none !important;
   }
 }

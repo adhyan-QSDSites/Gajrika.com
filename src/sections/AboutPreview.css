@@ -1,46 +1,120 @@
+
+/* =========================================
+   GAJRIKA — TRUST STRIP
+   Seamless Burgundy Marquee
+========================================= */
+
 .gajrika-trust-strip {
+  position: relative;
+  isolation: isolate;
+
   width: 100%;
-  height: 85px;
+  height: 86px;
+
   display: flex;
   align-items: center;
+
   overflow: hidden;
-  white-space: nowrap;
-  background: #4f202b;
+
+  background: linear-gradient(
+    180deg,
+    #682F3C 0%,
+    #542633 48%,
+    #40212B 100%
+  );
+
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
+
+/* =========================================
+   BOTTOM BLEND
+========================================= */
+
+.gajrika-trust-strip::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 22px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #28141E
+  );
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* =========================================
+   MARQUEE TRACK
+========================================= */
 
 .trust-strip-track {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  flex-wrap: nowrap;
+
   width: max-content;
   flex-shrink: 0;
 
-  animation: trust-marquee 13s linear infinite;
+  animation: gajrikaMarquee 15s linear infinite;
+  will-change: transform;
 }
+
+/* Repeated groups */
+
+.trust-strip-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   MARQUEE ITEMS
+========================================= */
 
 .trust-strip-item {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: center;
+
   flex-shrink: 0;
-  gap: 35px;
-  padding-right: 35px;
+  white-space: nowrap;
+
+  gap: 38px;
+  padding: 0 34px;
+
+  color: #F8F2E9;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.trust-strip-item span:first-child {
-  color: #F8F2E9;
-  font-family: Georgia, serif;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-}
+/* Rose separators */
 
 .trust-strip-star {
+  display: inline-block;
+
   color: #C99A98;
-  font-size: 22px;
+  font-size: 19px;
+  line-height: 1;
+
+  animation: trustStarRotate 12s linear infinite;
 }
 
-@keyframes trust-marquee {
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes gajrikaMarquee {
   from {
     transform: translateX(0);
   }
@@ -50,16 +124,70 @@
   }
 }
 
+@keyframes trustStarRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pause when hovered */
+
 .gajrika-trust-strip:hover .trust-strip-track {
   animation-play-state: paused;
 }
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .gajrika-trust-strip {
+    height: 76px;
+  }
+
+  .trust-strip-item {
+    font-size: 15px;
+    gap: 25px;
+    padding: 0 25px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 600px) {
   .gajrika-trust-strip {
     height: 65px;
   }
 
-  .trust-strip-item span:first-child {
-    font-size: 14px;
+  .trust-strip-track {
+    animation-duration: 27s;
+  }
+
+  .trust-strip-item {
+    font-size: 12px;
+    letter-spacing: 0.7px;
+    gap: 18px;
+    padding: 0 18px;
+  }
+
+  .trust-strip-star {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-strip-track,
+  .trust-strip-star {
+    animation: none !important;
   }
 }

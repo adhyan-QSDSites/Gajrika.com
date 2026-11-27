@@ -1,3 +1,4 @@
+
 import "./AboutPreview.css";
 
 const items = [
@@ -12,10 +13,18 @@ function AboutPreview() {
   return (
     <section className="gajrika-trust-strip">
       <div className="trust-strip-track">
-        {[...items, ...items].map((item, index) => (
-          <div className="trust-strip-item" key={index}>
-            <span>{item}</span>
-            <span className="trust-strip-star">✳</span>
+        {[0, 1].map((group) => (
+          <div
+            className="trust-strip-group"
+            key={group}
+            aria-hidden={group === 1}
+          >
+            {items.map((item, index) => (
+              <div className="trust-strip-item" key={index}>
+                <span>{item}</span>
+                <span className="trust-strip-star">✳</span>
+              </div>
+            ))}
           </div>
         ))}
       </div>
@@ -24,4 +33,3 @@ function AboutPreview() {
 }
 
 export default AboutPreview;
-
