@@ -1,0 +1,37 @@
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis {
+  scroll-behavior: auto !important;
+}
+
+html.lenis body {
+  overflow-x: hidden;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Scroll reveal initial state is controlled by GSAP */
+[data-reveal] {
+  will-change: transform, opacity;
+}
+
+/* Avoid unnecessary motion on smaller screens */
+@media (max-width: 768px) {
+  [data-reveal] {
+    will-change: auto;
+  }
+}

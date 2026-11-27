@@ -1,19 +1,19 @@
+
 import { useEffect, useState } from "react";
 import "./Hero.css";
 
 const images = [
-  "//images/hero/hero-1.png",
-  "//images/hero/hero-2.png",
-  "//images/hero/hero-3.png",
-  "//images/hero/hero-4.png",
-  "//images/hero/hero-5.png"
+  "/images/hero/hero-1.png",
+  "/images/hero/hero-2.png",
+  "/images/hero/hero-3.png",
+  "/images/hero/hero-4.png",
+  "/images/hero/hero-5.png",
 ];
 
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
 
-  // AUTO SLIDE EVERY 3 SECONDS
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => prev + 1);
@@ -22,7 +22,6 @@ function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  // INFINITE LOOP RESET
   const handleTransitionEnd = (event) => {
     if (
       event.propertyName === "transform" &&
@@ -42,42 +41,45 @@ function Hero() {
   return (
     <section className="gajrika-hero" id="home">
 
-      {/* FULL BACKGROUND IMAGE SLIDER */}
-
+      {/* BACKGROUND IMAGE SLIDER */}
       <div className="hero-background-slider">
-
         <div
           className={`hero-background-track ${
             transitionEnabled ? "slide-transition" : ""
           }`}
           style={{
-            transform: `translateX(-${currentSlide * 100}%)`
+            transform: `translateX(-${currentSlide * 100}%)`,
           }}
           onTransitionEnd={handleTransitionEnd}
         >
-
           {images.map((image, index) => (
             <div className="hero-background-slide" key={image}>
               <img
                 src={image}
                 alt={`Gajrika beauty manufacturing ${index + 1}`}
+                onError={() => console.error("Image failed to load:", image)}
+                draggable="false"
               />
             </div>
           ))}
 
-          {/* FIRST IMAGE DUPLICATE FOR INFINITE LOOP */}
-
+          {/* INFINITE LOOP DUPLICATE */}
           <div className="hero-background-slide">
-            <img src={images[0]} alt="Gajrika beauty manufacturing" />
+            <img
+              src={images[0]}
+              alt="Gajrika beauty manufacturing"
+              draggable="false"
+            />
           </div>
-
         </div>
-
       </div>
+
       {/* BACKGROUND OVERLAY */}
       <div className="hero-background-overlay"></div>
-      {/* LEFT CONTENT */}
+
+      {/* HERO CONTENT */}
       <div className="gajrika-hero-content">
+
         <div className="gajrika-hero-label">
           <span className="hero-label-line"></span>
           THE ART OF BEAUTY MANUFACTURING
@@ -92,7 +94,6 @@ function Hero() {
         </h1>
 
         <div className="gajrika-hero-bottom">
-
           <p>
             We transform beauty visions into exceptional products.
             From innovative formulations to premium manufacturing,
@@ -103,7 +104,6 @@ function Hero() {
             <span>CREATE YOUR BRAND</span>
             <span className="hero-button-arrow">↗</span>
           </a>
-
         </div>
 
         <div className="gajrika-hero-scroll">
@@ -114,7 +114,6 @@ function Hero() {
       </div>
 
       {/* SLIDE COUNTER */}
-
       <div className="hero-background-counter">
         {String((currentSlide % images.length) + 1).padStart(2, "0")}
         {" — "}

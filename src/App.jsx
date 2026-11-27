@@ -1,8 +1,9 @@
-import "./App.css"
-// Layout Components
+
+import "./App.css";
+
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-// Homepage Sections
+
 import Hero from "./sections/Hero";
 import AboutPreview from "./sections/AboutPreview";
 import Capabilities from "./sections/Capabilities";
@@ -11,9 +12,13 @@ import WhyGajrika from "./sections/WhyGajrika";
 import Manufacturing from "./sections/Manufacturing";
 import ContactSection from "./sections/ContactSection";
 
+import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
+
 function App() {
   return (
     <>
+      <SmoothScroll />
+
       <Navbar />
 
       <main>
